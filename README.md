@@ -3,12 +3,12 @@
     <img src="./logo.png" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">Doodle Board 🎨</h3>
+  <h3 align="center">Captura 📸</h3>
 
   <p align="center">
-      Unleash Your Creativity, One Stroke at a Time!
+      Some TAGLINE
     <br />
-    <a href="https://doodle-board.netlify.app/"><strong>Go to App »</strong></a>
+    <a href="https://captura.netlify.app/"><strong>Go to App »</strong></a>
     <br />
     <br />
     <a href="https://github.com/prerana1821/captura/pulls">Raise a PR</a>
