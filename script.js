@@ -116,4 +116,4 @@ function stopTimer() {
   timer.innerText = "00:00:00";
 }
 
-// recordStream();
+recordStream();
