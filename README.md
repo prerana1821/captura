@@ -8,7 +8,7 @@
   <p align="center">
       Some TAGLINE
     <br />
-    <a href="https://captura.netlify.app/"><strong>Go to App »</strong></a>
+    <a href="https://captura-recorder.netlify.app/"><strong>Go to App »</strong></a>
     <br />
     <br />
     <a href="https://github.com/prerana1821/captura/pulls">Raise a PR</a>
