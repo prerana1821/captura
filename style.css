@@ -1,0 +1,54 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.video-stream {
+  height: 99vh;
+  width: 99vw;
+  background-color: white;
+}
+
+.video-stream video {
+  width: 100%;
+  height: 100%;
+}
+
+.video-actions {
+  height: 10rem;
+  width: 5rem;
+  position: absolute;
+  top: calc((100vh - 10rem) / 2);
+  right: 5rem;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  z-index: 2;
+  align-items: center;
+  gap: 1rem;
+}
+
+.video-actions * {
+  cursor: pointer;
+}
+
+.record img {
+  width: 55px;
+  height: 50px;
+  margin-left: 0.3rem;
+}
+
+.capture img {
+  margin: 0.3rem;
+  width: 48px;
+}
+
+.timer {
+  color: black;
+  font-size: large;
+}
