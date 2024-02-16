@@ -12,7 +12,7 @@ const filterLayer = document.querySelector(".filter-layer");
 let canvas = document.createElement("canvas");
 let tool = canvas.getContext("2d");
 
-let chosenBgColor;
+let chosenBgColor = "transparent";
 
 let recorder;
 let chunks = [];
@@ -126,10 +126,10 @@ capture.addEventListener("click", (event) => {
   canvas.width = video.videoWidth;
   canvas.height = video.videoHeight;
 
-  tool.drawImage(video, 0, 0, video.videoWidth, video.videoHeight);
+  tool.drawImage(video, 0, 0, canvas.width, canvas.height);
 
   tool.fillStyle = chosenBgColor;
-  tool.fillRect(0, 0, video.videoWidth, video.videoHeight);
+  tool.fillRect(0, 0, canvas.width, canvas.height);
 
   let imageUrl = canvas.toDataURL("image");
 

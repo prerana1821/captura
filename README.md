@@ -21,6 +21,7 @@
 
 ## TODO Features
 
+- [ ] Screenshare functionality
 - [ ] Emoji Reaction on video based on timestamp
 - [ ] Comment on video based on timestamp
 - [ ] Download and copy share link feature
