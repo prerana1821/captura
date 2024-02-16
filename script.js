@@ -47,15 +47,29 @@ async function recordStream() {
     recorder.addEventListener("stop", (event) => {
       // conversion of media chunks data to video
       const blob = new Blob(chunks, { type: "video/mp4" });
-      const videoURL = URL.createObjectURL(blob);
 
-      const a = document.createElement("a");
-      a.href = videoURL;
+      if (db) {
+        const videoID = shortid();
+        const transaction = db.transaction("video", "readwrite");
+        const videoStore = transaction.objectStore("video");
 
-      const formattedDate = getFormattedDate();
+        const videoEntry = {
+          id: `video-${videoID}`,
+          blobData: blob,
+        };
 
-      a.download = `stream ${formattedDate} by captura.mp4`;
-      a.click();
+        videoStore.add(videoEntry);
+      }
+
+      // const videoURL = URL.createObjectURL(blob);
+
+      // const a = document.createElement("a");
+      // a.href = videoURL;
+
+      // const formattedDate = getFormattedDate();
+
+      // a.download = `stream ${formattedDate} by captura.mp4`;
+      // a.click();
     });
   } catch (error) {
     if (error.name === "OverconstrainedError") {
@@ -131,15 +145,27 @@ capture.addEventListener("click", (event) => {
   tool.fillStyle = chosenBgColor;
   tool.fillRect(0, 0, canvas.width, canvas.height);
 
-  let imageUrl = canvas.toDataURL("image");
+  if (db) {
+    const imageID = shortid();
+    const transaction = db.transaction("image", "readwrite");
+    const imageStore = transaction.objectStore("image");
+    let imageUrl = canvas.toDataURL("image");
 
-  let a = document.createElement("a");
-  a.href = imageUrl;
+    const imageEntry = {
+      id: `image-${imageID}`,
+      url: imageUrl,
+    };
 
-  const formattedDate = getFormattedDate();
+    imageStore.add(imageEntry);
+  }
 
-  a.download = `image ${formattedDate}.jpg`;
-  a.click();
+  // let a = document.createElement("a");
+  // a.href = imageUrl;
+
+  // const formattedDate = getFormattedDate();
+
+  // a.download = `image ${formattedDate}.jpg`;
+  // a.click();
 
   // clear any previous timeout before setting a new one
   clearTimeout(captureImgIntervalID);

@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="./icons/favicon.ico" type="image/x-icon" />
     <title>Captura</title>
   </head>
   <body>
@@ -34,6 +34,24 @@
 
     <div class="filter-layer"></div>
 
+    <div class="gallery-content">
+      <img
+        src="./icons/gallery.png"
+        class="gallery"
+        alt="Open Gallery"
+        title="Open Gallery"
+      />
+    </div>
+
+    <script src="https://unpkg.com/shortid-dist@1.0.5/dist/shortid-2.2.13.min.js"></script>
+    <script src="./db.js"></script>
     <script src="./script.js"></script>
+
+    <script>
+      const gallery = document.querySelector(".gallery-content");
+      gallery.addEventListener("click", () => {
+        location.assign("./gallery.html");
+      });
+    </script>
   </body>
 </html>
