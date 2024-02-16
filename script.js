@@ -6,6 +6,14 @@ const recordIcon = document.querySelector(".record-icon");
 const capture = document.querySelector(".capture");
 const captureIcon = document.querySelector(".capture-icon");
 
+const filterImages = document.querySelectorAll(".filter-image");
+const filterLayer = document.querySelector(".filter-layer");
+
+let canvas = document.createElement("canvas");
+let tool = canvas.getContext("2d");
+
+let chosenBgColor;
+
 let recorder;
 let chunks = [];
 let isRecording = false;
@@ -115,13 +123,13 @@ function stopTimer() {
 capture.addEventListener("click", (event) => {
   captureIcon.src = "./icons/capture.gif";
 
-  let canvas = document.createElement("canvas");
   canvas.width = video.videoWidth;
   canvas.height = video.videoHeight;
 
-  let tool = canvas.getContext("2d");
-
   tool.drawImage(video, 0, 0, video.videoWidth, video.videoHeight);
+
+  tool.fillStyle = chosenBgColor;
+  tool.fillRect(0, 0, video.videoWidth, video.videoHeight);
 
   let imageUrl = canvas.toDataURL("image");
 
@@ -153,4 +161,14 @@ function getFormattedDate() {
   return `${formattedDate} at ${formattedTime}`;
 }
 
-// recordStream();
+filterImages.forEach((filterImage) => {
+  filterImage.addEventListener("click", () => {
+    chosenBgColor = window
+      .getComputedStyle(filterImage)
+      .getPropertyValue("background-color");
+
+    filterLayer.style.backgroundColor = chosenBgColor;
+  });
+});
+
+recordStream();
