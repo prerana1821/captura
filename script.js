@@ -9,6 +9,11 @@ const captureIcon = document.querySelector(".capture-icon");
 const filterImages = document.querySelectorAll(".filter-image");
 const filterLayer = document.querySelector(".filter-layer");
 
+const shareScreen = document.querySelector(".share-screen");
+const shareScreenIcon = document.querySelector(".share-screen-icon");
+
+let screenStream;
+
 let canvas = document.createElement("canvas");
 let tool = canvas.getContext("2d");
 
@@ -169,6 +174,40 @@ filterImages.forEach((filterImage) => {
 
     filterLayer.style.backgroundColor = chosenBgColor;
   });
+});
+
+async function startScreenSharing() {
+  try {
+    screenStream = await navigator.mediaDevices.getDisplayMedia({
+      video: true,
+    });
+
+    // Stop the current video stream (if any)
+    const currentStream = video.srcObject;
+    if (currentStream instanceof MediaStream) {
+      currentStream.getTracks().forEach((track) => track.stop());
+      video.parentElement.classList.add("video-stream-center");
+    }
+
+    video.srcObject = screenStream;
+  } catch (error) {
+    console.error(`getDisplayMedia error: ${error.name}`, error);
+    alert("Failed to start screen sharing. Please try again later.");
+  }
+}
+
+shareScreen.addEventListener("click", () => {
+  if (screenStream) {
+    // Stop screen sharing
+    screenStream.getTracks().forEach((track) => track.stop());
+    video.srcObject = null;
+    // video.parentElement.classList.add("video-stream-center");
+    // shareScreenIcon.src = "./icons/screen-share.png";
+  } else {
+    // Start screen sharing
+    startScreenSharing();
+    // shareScreenIcon.src = "./icons/screen-share-active.png";
+  }
 });
 
 recordStream();
