@@ -24,21 +24,20 @@ body {
   width: 100vw;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  background-color: beige;
+  justify-content: flex-start;
 }
 
 .media-gallery {
   height: 15rem;
   width: 15rem;
-  border: 10px solid white;
+  border: 10px solid #f4f4f5;
+  background-color: #f4f4f5;
   margin: 2rem;
-  background-color: crimson;
   border-radius: 0.5rem;
 }
 
 .media {
-  height: calc(100% - 1rem - 2rem);
+  height: calc(100% - 0.5rem - 2rem);
 }
 
 .media > * {

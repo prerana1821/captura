@@ -133,3 +133,7 @@ body {
   z-index: 2;
   cursor: pointer;
 }
+
+.heading {
+  text-align: center;
+}
