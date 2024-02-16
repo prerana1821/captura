@@ -32,3 +32,7 @@
   - [ ] Annotate
   - [ ] Crop
   - [ ] Add Sticker
+
+## Blogs to be written based on my learnings
+
+- How to capture image from a video in Javascript

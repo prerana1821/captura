@@ -14,6 +14,8 @@ let timer = document.querySelector(".timer");
 let timerID;
 let counter = 0; // Represents total seconds
 
+let captureImgIntervalID;
+
 const constraints = {
   audio: true,
   video: true,
@@ -42,15 +44,9 @@ async function recordStream() {
       const a = document.createElement("a");
       a.href = videoURL;
 
-      const date = new Date();
-      const formattedDate = date.toLocaleDateString();
-      const formattedTime = date.toLocaleTimeString([], {
-        hour: "2-digit",
-        minute: "2-digit",
-        second: "2-digit",
-      });
+      const formattedDate = getFormattedDate();
 
-      a.download = `stream ${formattedDate} at ${formattedTime}.mp4`;
+      a.download = `stream ${formattedDate} by captura.mp4`;
       a.click();
     });
   } catch (error) {
@@ -116,4 +112,45 @@ function stopTimer() {
   timer.innerText = "00:00:00";
 }
 
-recordStream();
+capture.addEventListener("click", (event) => {
+  captureIcon.src = "./icons/capture.gif";
+
+  let canvas = document.createElement("canvas");
+  canvas.width = video.videoWidth;
+  canvas.height = video.videoHeight;
+
+  let tool = canvas.getContext("2d");
+
+  tool.drawImage(video, 0, 0, video.videoWidth, video.videoHeight);
+
+  let imageUrl = canvas.toDataURL("image");
+
+  let a = document.createElement("a");
+  a.href = imageUrl;
+
+  const formattedDate = getFormattedDate();
+
+  a.download = `image ${formattedDate}.jpg`;
+  a.click();
+
+  // clear any previous timeout before setting a new one
+  clearTimeout(captureImgIntervalID);
+
+  captureImgIntervalID = setTimeout(() => {
+    captureIcon.src = "./icons/capture.png";
+  }, 1500);
+});
+
+function getFormattedDate() {
+  const date = new Date();
+  const formattedDate = date.toLocaleDateString();
+  const formattedTime = date.toLocaleTimeString([], {
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+  });
+
+  return `${formattedDate} at ${formattedTime}`;
+}
+
+// recordStream();
