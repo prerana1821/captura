@@ -22,7 +22,7 @@ let timer = document.querySelector(".timer");
 let timerID;
 let counter = 0; // Represents total seconds
 
-let captureImgIntervalID;
+// let captureImgIntervalID;
 
 const constraints = {
   audio: true,
@@ -96,11 +96,11 @@ record.addEventListener("click", (event) => {
 
   if (isRecording) {
     recorder.start();
-    recordIcon.src = "./icons/record.gif";
+    // recordIcon.src = "./icons/record.gif";
     startTimer();
   } else {
     recorder.stop();
-    recordIcon.src = "./icons/record.png";
+    // recordIcon.src = "./icons/record.png";
     stopTimer();
   }
 });
@@ -135,7 +135,7 @@ function stopTimer() {
 }
 
 capture.addEventListener("click", (event) => {
-  captureIcon.src = "./icons/capture.gif";
+  // captureIcon.src = "./icons/capture.gif";
 
   canvas.width = video.videoWidth;
   canvas.height = video.videoHeight;
@@ -168,11 +168,11 @@ capture.addEventListener("click", (event) => {
   // a.click();
 
   // clear any previous timeout before setting a new one
-  clearTimeout(captureImgIntervalID);
+  // clearTimeout(captureImgIntervalID);
 
-  captureImgIntervalID = setTimeout(() => {
-    captureIcon.src = "./icons/capture.png";
-  }, 1500);
+  // captureImgIntervalID = setTimeout(() => {
+  //   captureIcon.src = "./icons/capture.png";
+  // }, 1500);
 });
 
 function getFormattedDate() {
@@ -197,4 +197,4 @@ filterImages.forEach((filterImage) => {
   });
 });
 
-recordStream();
+// recordStream();

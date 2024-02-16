@@ -9,6 +9,18 @@
     <link rel="shortcut icon" href="./icons/favicon.ico" type="image/x-icon" />
   </head>
   <body>
-    Gallery
+    <div class="back">
+      <img src="./icons/back.png" alt="Back to main page" />
+    </div>
+    <div class="display-gallery"></div>
+
+    <script src="./db.js"></script>
+    <script src="./gallery.js"></script>
+    <script>
+      let back = document.querySelector(".back");
+      back.addEventListener("click", (e) => {
+        location.assign("./index.html");
+      });
+    </script>
   </body>
 </html>

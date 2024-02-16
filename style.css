@@ -27,13 +27,7 @@ body {
   position: absolute;
   top: calc((100vh - 10rem) / 2);
   right: 5rem;
-  color: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
   z-index: 2;
-  align-items: center;
-  gap: 1rem;
 }
 
 .video-actions * {
@@ -41,14 +35,11 @@ body {
 }
 
 .record img {
-  width: 55px;
-  height: 52px;
-  margin-left: 0.3rem;
+  margin-left: 0.2rem;
 }
 
 .capture img {
   margin: 0.3rem;
-  width: 48px;
 }
 
 .timer {
@@ -109,9 +100,4 @@ body {
   bottom: 6rem;
   z-index: 2;
   cursor: pointer;
-}
-
-.gallery-content img {
-  width: 55px;
-  height: 60px;
 }
