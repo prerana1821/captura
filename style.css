@@ -47,6 +47,36 @@ body {
   font-size: medium;
 }
 
+.scale-record {
+  animation-name: scale-record;
+  animation-iteration-count: infinite;
+  animation-duration: 1s;
+}
+
+.scale-capture {
+  animation-name: scale-capture;
+  animation-iteration-count: 1;
+  animation-duration: 1s;
+}
+
+@keyframes scale-record {
+  0% {
+    transform: scale(0.8);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes scale-capture {
+  0% {
+    transform: scale(0.8);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
+
 .title {
   font-size: smaller;
   font-weight: bold;

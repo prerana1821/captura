@@ -22,7 +22,7 @@ let timer = document.querySelector(".timer");
 let timerID;
 let counter = 0; // Represents total seconds
 
-// let captureImgIntervalID;
+let captureImgTimeoutID;
 
 const constraints = {
   audio: true,
@@ -96,11 +96,11 @@ record.addEventListener("click", (event) => {
 
   if (isRecording) {
     recorder.start();
-    // recordIcon.src = "./icons/record.gif";
+    recordIcon.classList.add("scale-record");
     startTimer();
   } else {
     recorder.stop();
-    // recordIcon.src = "./icons/record.png";
+    recordIcon.classList.remove("scale-record");
     stopTimer();
   }
 });
@@ -137,6 +137,8 @@ function stopTimer() {
 capture.addEventListener("click", (event) => {
   // captureIcon.src = "./icons/capture.gif";
 
+  captureIcon.classList.add("scale-capture");
+
   canvas.width = video.videoWidth;
   canvas.height = video.videoHeight;
 
@@ -168,11 +170,11 @@ capture.addEventListener("click", (event) => {
   // a.click();
 
   // clear any previous timeout before setting a new one
-  // clearTimeout(captureImgIntervalID);
+  clearTimeout(captureImgTimeoutID);
 
-  // captureImgIntervalID = setTimeout(() => {
-  //   captureIcon.src = "./icons/capture.png";
-  // }, 1500);
+  captureImgTimeoutID = setTimeout(() => {
+    captureIcon.classList.remove("scale-capture");
+  }, 1200);
 });
 
 function getFormattedDate() {
@@ -197,4 +199,4 @@ filterImages.forEach((filterImage) => {
   });
 });
 
-// recordStream();
+recordStream();
