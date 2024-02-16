@@ -70,6 +70,8 @@ body {
   background-repeat: no-repeat;
   background-blend-mode: color-burn;
   cursor: pointer;
+  border-radius: 0.2rem;
+  margin-bottom: 0.5rem;
 }
 
 .orange {
