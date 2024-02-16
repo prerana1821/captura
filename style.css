@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Varela+Round&display=swap");
+
 * {
   box-sizing: border-box;
 }
@@ -5,6 +7,7 @@
 body {
   margin: 0;
   padding: 0;
+  font-family: "Varela Round", sans-serif;
 }
 
 .video-stream {
@@ -50,5 +53,51 @@ body {
 
 .timer {
   color: black;
-  font-size: large;
+  font-size: medium;
+}
+
+.title {
+  font-size: smaller;
+  font-weight: bold;
+}
+
+.filter-images {
+  position: absolute;
+  top: calc((100vh - 20rem) / 2);
+  left: 5rem;
+  height: 20rem;
+  width: 7rem;
+  z-index: 2;
+}
+
+.filter-image {
+  width: 5rem;
+  height: 4rem;
+  background-image: url("https://picsum.photos/seed/picsum/200/300");
+  background-position: center;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-blend-mode: color-burn;
+}
+
+.orange {
+  background-color: #ffa50052;
+}
+.brown {
+  background-color: #a52a2a59;
+}
+.pink {
+  background-color: #ffc0cb57;
+}
+.transparent {
+  background-color: transparent;
+}
+
+.filter-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  z-index: 1;
 }
