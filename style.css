@@ -27,13 +27,7 @@ body {
   position: absolute;
   top: calc((100vh - 16rem) / 2);
   right: 5rem;
-  color: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
   z-index: 2;
-  align-items: center;
-  gap: 1rem;
 }
 
 .video-actions * {
@@ -41,14 +35,11 @@ body {
 }
 
 .record img {
-  width: 55px;
-  height: 52px;
-  margin-left: 0.3rem;
+  margin-left: 0.2rem;
 }
 
 .capture img {
   margin: 0.3rem;
-  width: 48px;
 }
 
 .share-screen img {
@@ -60,6 +51,36 @@ body {
 .timer {
   color: black;
   font-size: medium;
+}
+
+.scale-record {
+  animation-name: scale-record;
+  animation-iteration-count: infinite;
+  animation-duration: 1s;
+}
+
+.scale-capture {
+  animation-name: scale-capture;
+  animation-iteration-count: 1;
+  animation-duration: 1s;
+}
+
+@keyframes scale-record {
+  0% {
+    transform: scale(0.8);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes scale-capture {
+  0% {
+    transform: scale(0.8);
+  }
+  100% {
+    transform: scale(1.1);
+  }
 }
 
 .title {
@@ -85,6 +106,8 @@ body {
   background-repeat: no-repeat;
   background-blend-mode: color-burn;
   cursor: pointer;
+  border-radius: 0.2rem;
+  margin-bottom: 0.5rem;
 }
 
 .orange {
@@ -112,4 +135,16 @@ body {
 .video-stream-center {
   margin: auto;
   width: 75%;
+}
+
+.gallery-content {
+  position: absolute;
+  right: 5.5rem;
+  bottom: 6rem;
+  z-index: 2;
+  cursor: pointer;
+}
+
+.heading {
+  text-align: center;
 }

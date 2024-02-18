@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gallery || Captura</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="gallery.css" />
+    <link rel="shortcut icon" href="./icons/favicon.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <h1 class="heading">Media Gallery</h1>
+    <div class="back">
+      <img src="./icons/back.png" alt="Back to main page" />
+    </div>
+    <div class="display-gallery">
+      <!-- <div class="media-gallery">
+        <div class="media">
+          <video src="" autoplay loop></video>
+        </div>
+        <div class="media-actions">
+          <div class="dowload">
+            <img src="./icons/download.png" alt="Download Media" />
+          </div>
+          <div class="delete">
+            <img src="./icons/delete.png" alt="Delete Media" />
+          </div>
+        </div> -->
+      </div>
+    </div>
+
+    <script src="./db.js"></script>
+    <script src="./gallery.js"></script>
+    <script>
+      let back = document.querySelector(".back");
+      back.addEventListener("click", (e) => {
+        location.assign("./index.html");
+      });
+    </script>
+  </body>
+</html>

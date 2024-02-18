@@ -1,6 +1,6 @@
 <div align="center">
   <a href="https://github.com/prerana1821/captura">
-    <img src="./logo.png" alt="Logo" width="80" height="80">
+    <img src="./icons/logo.png" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">Captura 📸</h3>
@@ -37,3 +37,4 @@
 ## Blogs to be written based on my learnings
 
 - How to capture image from a video in Javascript
+- How to use indexedDB for save videos and images in Javascript
