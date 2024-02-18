@@ -177,18 +177,6 @@ capture.addEventListener("click", (event) => {
   }, 1200);
 });
 
-function getFormattedDate() {
-  const date = new Date();
-  const formattedDate = date.toLocaleDateString();
-  const formattedTime = date.toLocaleTimeString([], {
-    hour: "2-digit",
-    minute: "2-digit",
-    second: "2-digit",
-  });
-
-  return `${formattedDate} at ${formattedTime}`;
-}
-
 filterImages.forEach((filterImage) => {
   filterImage.addEventListener("click", () => {
     chosenBgColor = window
