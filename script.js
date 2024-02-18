@@ -60,16 +60,6 @@ async function recordStream() {
 
         videoStore.add(videoEntry);
       }
-
-      // const videoURL = URL.createObjectURL(blob);
-
-      // const a = document.createElement("a");
-      // a.href = videoURL;
-
-      // const formattedDate = getFormattedDate();
-
-      // a.download = `stream ${formattedDate} by captura.mp4`;
-      // a.click();
     });
   } catch (error) {
     if (error.name === "OverconstrainedError") {
@@ -160,14 +150,6 @@ capture.addEventListener("click", (event) => {
 
     imageStore.add(imageEntry);
   }
-
-  // let a = document.createElement("a");
-  // a.href = imageUrl;
-
-  // const formattedDate = getFormattedDate();
-
-  // a.download = `image ${formattedDate}.jpg`;
-  // a.click();
 
   // clear any previous timeout before setting a new one
   clearTimeout(captureImgTimeoutID);
