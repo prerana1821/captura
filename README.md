@@ -35,6 +35,8 @@ Introducing Captura, a versatile multimedia application designed to empower user
 - Filters - Provides various image filters
 - Media Gallery - Displays a collection of captured media (images or videos).
 
+More features to come! 😍😇
+
 # Technologies Used:
 
 - HTML/CSS
@@ -61,8 +63,8 @@ Introducing Captura, a versatile multimedia application designed to empower user
 
 # Blogs to be written based on my learnings
 
-- How to capture image from a video in Javascript
-- How to use indexedDB for save videos and images in Javascript
+- [ ] How to capture image from a video in Javascript
+- [ ] How to use indexedDB for save videos and images in Javascript
 
 # Installation
 
